@@ -1,0 +1,10 @@
+- @cohorts.each do |cohort|
+	%br
+	%table
+		%tr
+			%td
+			= cohort.description	
+			= cohort.location.name
+			= form_for @user, url: "users/#{@user.id}", action: "PATCH" do |t|
+				= t.hidden_field :cohort_id, :value => cohort.id
+				= t.submit "Sign Up!"

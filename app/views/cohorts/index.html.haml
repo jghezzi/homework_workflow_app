@@ -1,0 +1,8 @@
+- @cohorts.each do |cohort|
+	%br
+	%table
+		%tr
+			%td
+			= cohort.description	
+			= cohort.location.name
+			= button_to "Sign Up!", cohort_signup_user_path(cohort.id), method: :patch

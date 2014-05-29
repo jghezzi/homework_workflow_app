@@ -1,0 +1,7 @@
+- @assignments.each do |assignment|
+	%br
+
+	= assignment.description
+	- assignment.submissions.each do |f|
+		= f.workflow_status
+		= f.user.email
