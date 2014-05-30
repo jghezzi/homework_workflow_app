@@ -1,7 +1,10 @@
 - @assignments.each do |assignment|
 	%br
-
-	= assignment.description
-	- assignment.submissions.each do |f|
-		= f.workflow_status
-		= f.user.email
+	%table
+		%tc
+			%td
+				= assignment.description
+				= button_to "Add a comment", assignment_path(assignment.id), method: :get
+				- assignment.submissions.each do |f|
+					= f.workflow_status
+					= f.user.email

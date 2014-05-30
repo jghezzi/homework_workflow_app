@@ -3,4 +3,5 @@ class Submission < ActiveRecord::Base
 	belongs_to :user
 	has_many :comments, as: :commentable
 	has_many :submission_links
+	accepts_nested_attributes_for :submission_links
 end

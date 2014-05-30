@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :assignments
   resources :submissions
   resources :submission_links
+  resources :locations
+  resources :comments 
 
   # Example resource route with options:
   #   resources :products do

@@ -8,6 +8,11 @@ class AssignmentsController < ApplicationController
 		@new_assignment.submissions.build
 	end
 
+	def show
+		@assignment = Assignment.find(params[:id])
+		@new_comment = @assignment.comments.build
+	end
+
 	private
 
 	def assignment_params
