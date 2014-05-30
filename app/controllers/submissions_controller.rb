@@ -1,4 +1,14 @@
 class SubmissionsController < ApplicationController
+	
+	def index
+		@submissions = Submission.all
+	end
+
+	def show
+		@submission = Submission.find(params[:id])
+		@new_comment = @submission.comments.build
+	end
+
 	def new
 		@new_submission = Submission.new
 		2.times { @new_submission.submission_links.build }

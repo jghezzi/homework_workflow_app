@@ -1,0 +1,8 @@
+%br
+%br
+- @submissions.each do |submission|
+	= submission.assignment.description
+	= submission.workflow_status
+	- submission.comments.each do |comment|
+		= comment.description
+	= button_to "Add a comment", submission_path(submission.id), method: :get
