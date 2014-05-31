@@ -8,7 +8,7 @@ User signs up for class (2 hrs)
 
 User submits HW links(2 hrs)
 
-User can add as many lonks as they want (Javascript)
+User can add as many links as they want (Javascript)
 
 User comments on HW
 
@@ -17,3 +17,7 @@ User comments on assignment
 User cannot make an assignment
 
 User cannot see HW links other than their own
+
+Features / Changes:
+	- Make text area for assignment description
+	- 

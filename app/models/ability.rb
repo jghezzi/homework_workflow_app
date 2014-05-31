@@ -10,9 +10,14 @@ class Ability
       can :manage, :all
     elsif user.user_type == "instructor"
       can :manage, :assignments
-    else
+    elsif user.user_type == "student"
       can :read, :all
       can :create, :comments
+      can :update, :user => user.cohort_id
+    elsif user.user_type == nil
+      can :read, :welcome
+    else
+      can :read, :welcome  
     end
     #
     # The first argument to `can` is the action you are giving the user 

@@ -1,6 +1,8 @@
 %br
 %br
 %b Assignments for #{current_user.cohort.description} - #{current_user.cohort.location.name}
+- if current_user.user_type != "student"
+	= button_to "Add a new assignment", new_assignment_path, method: :get
 %br
 %br
 	%table

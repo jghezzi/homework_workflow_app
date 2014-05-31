@@ -12,6 +12,7 @@ class AssignmentsController < ApplicationController
 	def create
 		@new_assignment = Assignment.new(assignment_params)
 		@new_assignment.save
+		redirect_to assignments_path
 		authorize! :create, @new_assignment
 	end
 

@@ -1,7 +1,12 @@
 %br
 %br
-- if current_user
-	- if current_user.cohort_id == nil
-		= link_to "Class Registration", cohorts_path
-	- else
-		= link_to "Class Assignments", assignments_path
+- if current_user && current_user.user_type == nil
+	Please wait for administrator approval.
+-else
+	- if current_user
+		- if current_user.user_type == "admin"
+			= link_to "Admin Console", users_path
+		- if current_user.cohort_id == nil
+			= link_to "Class Registration", cohort_signup_path
+		- else
+			= link_to "Class Assignments", assignments_path
