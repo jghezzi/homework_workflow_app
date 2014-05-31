@@ -1,0 +1,7 @@
+- @users.each do |user|
+	%br
+	%br
+	= user.name 
+	= user.email
+	= user.user_type
+	= button_to "Edit User Type", edit_user_path(user.id), method: :get

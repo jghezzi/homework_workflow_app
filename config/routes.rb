@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   get 'cohort_signup' => 'users#cohort_signup'
 
   resources :users
-  resources :assignments
+  resources :assignments do
+    member do
+      get 'show_links'
+    end
+  end
   resources :submissions
   resources :submission_links
   resources :locations

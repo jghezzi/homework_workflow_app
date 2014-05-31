@@ -1,3 +1,7 @@
 %br
 %br
-hello
+- if current_user
+	- if current_user.cohort_id == nil
+		= link_to "Class Registration", cohorts_path
+	- else
+		= link_to "Class Assignments", assignments_path

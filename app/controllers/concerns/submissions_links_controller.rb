@@ -1,0 +1,4 @@
+class SubmissionsLinksController < ApplicationController
+
+
+end

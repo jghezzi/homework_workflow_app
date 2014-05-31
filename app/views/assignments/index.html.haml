@@ -1,12 +1,24 @@
-- @assignments.each do |assignment|
-	%br
+%br
+%br
+%b Assignments for #{current_user.cohort.description} - #{current_user.cohort.location.name}
+%br
+%br
 	%table
 		%tr
 			%td
-				= assignment.description
-				= button_to "Add a comment", assignment_path(assignment.id), method: :get
-				- assignment.submissions.each do |f|
-					= f.workflow_status
-					= f.user.email
-					- assignment.comments.each do |ff|
-						= ff.description
+				- @assignments.each do |assignment|
+					- if assignment.cohort_id != nil
+						- if current_user.cohort_id.to_i == assignment.cohort_id.to_i
+							%br
+							Assignment Description:
+							= assignment.description
+							= button_to "Add a comment", assignment_path(assignment.id), method: :get
+							- assignment.submissions.each do |f|
+								= f.workflow_status
+								= f.assignment.cohort_id
+								Assignment Title
+								= f.assignment.title
+								= button_to "Show Links", show_links_assignment_path(f.id), method: :get
+							- assignment.comments.each do |ff|
+								= ff.description
+	%br

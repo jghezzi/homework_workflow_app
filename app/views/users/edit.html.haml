@@ -1,0 +1,5 @@
+= form_for @user do |f|
+	= "#{@user.name}"
+	= "#{@user.email}"
+	= f.select :user_type, User.all.collect { |u| [u.user_type]}
+	= f.submit "Change User Type"

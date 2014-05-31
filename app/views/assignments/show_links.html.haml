@@ -1,0 +1,9 @@
+%br
+%br
+= @assignment.description
+- @assignment.submissions.each do |f|
+	= f.workflow_status
+	%br
+	- f.submission_links.each do |ff|
+		= ff.description
+		%br
