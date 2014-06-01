@@ -24,7 +24,14 @@ Rails.application.routes.draw do
       get 'show_links'
     end
   end
-  resources :submissions
+  resources :submissions do
+    member do
+      get 'review'
+      patch 'update_state'
+      patch 'approve' => 'submissions#approve'
+      patch 'reject' => 'submissions#reject'
+    end
+  end
   resources :submission_links
   resources :locations
   resources :comments 

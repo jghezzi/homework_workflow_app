@@ -1,7 +1,7 @@
 = form_for @new_submission do |f|
 	= f.label :assignment
-	= f.select :assignment_id, Assignment.all.collect { |a| [a.description, a.id]}
-	= f.hidden_field :workflow_status, :value => "New"
+	= f.select :assignment_id, Assignment.all.collect { |a| [a.title, a.id] }
+	= f.hidden_field :workflow_state, :value => "New"
 	= f.hidden_field :user_id, :value => current_user.id
 	= f.fields_for :submission_links do |ff|
 		Link

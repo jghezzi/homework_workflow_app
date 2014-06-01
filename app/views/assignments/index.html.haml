@@ -4,23 +4,34 @@
 - if current_user.user_type != "student"
 	= button_to "Add a new assignment", new_assignment_path, method: :get
 %br
+%table
+	%tr
+		%td
+		- @assignments.each do |assignment|
+			- if assignment.cohort_id != nil
+				- if current_user.cohort_id.to_i == assignment.cohort_id.to_i
+					- if current_user.user_type == "student"
+						= button_to "Submit Homework", new_submission_path, method: :get
+					%br
+					Assignment:
+					= assignment.title
+					%br
+					Description:
+					= assignment.description
+					= button_to "Comment", assignment_path(assignment.id), method: :get
+					- assignment.submissions.each do |f|
+						Workflow Status:
+						= f.workflow_state
+						- if current_user.user_type != "student"
+							= button_to "Review Submission", review_submission_path(f.id), method: :get
+						Assignment Title
+						= f.assignment.title
+						= button_to "Show Links", show_links_assignment_path(f.id), method: :get
+					Comments:
+					%br
+					- assignment.comments.each do |ff|
+						%br
+						= ff.user.name
+						= ":"
+						= ff.description
 %br
-	%table
-		%tr
-			%td
-				- @assignments.each do |assignment|
-					- if assignment.cohort_id != nil
-						- if current_user.cohort_id.to_i == assignment.cohort_id.to_i
-							%br
-							Assignment Description:
-							= assignment.description
-							= button_to "Add a comment", assignment_path(assignment.id), method: :get
-							- assignment.submissions.each do |f|
-								= f.workflow_status
-								= f.assignment.cohort_id
-								Assignment Title
-								= f.assignment.title
-								= button_to "Show Links", show_links_assignment_path(f.id), method: :get
-							- assignment.comments.each do |ff|
-								= ff.description
-	%br

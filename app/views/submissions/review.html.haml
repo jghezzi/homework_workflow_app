@@ -1,0 +1,6 @@
+= form_for @submission do |f|
+	= "#{@submission.workflow_state}"
+	= link_to "Accept", "/submissions/#{@submission.id}/approve", method: :patch
+	= link_to "Reject", "/submissions/#{@submission.id}/reject", method: :patch
+	- @submission.submission_links.each do |ff|
+		= ff.description

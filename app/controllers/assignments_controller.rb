@@ -2,6 +2,7 @@ class AssignmentsController < ApplicationController
 
 	def index
 		@assignments = Assignment.all
+		@submissions = Submission.all
 	end
 
 	def new

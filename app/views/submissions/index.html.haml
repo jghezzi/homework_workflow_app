@@ -2,6 +2,8 @@
 %br
 - @submissions.each do |submission|
 	= submission.assignment.description
+	%br
+	= submission.user.name
 	= submission.workflow_status
 	- submission.comments.each do |comment|
 		= comment.description

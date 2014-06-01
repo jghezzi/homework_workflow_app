@@ -7,6 +7,7 @@ gem 'pg'
 gem 'haml'
 gem 'devise'
 gem 'cancan'
+gem 'workflow'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

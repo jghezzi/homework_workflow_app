@@ -1,23 +1,25 @@
 User signs up
 
-User becomes a 'student' upon signup
+User becomes a 'student' upon signup NOT WORKING-- ADMIN MUST ASSIGN (devise won't allow params)
 
 User must sign up for a class before proceeding
 
-User signs up for class (2 hrs)
+User signs up for class COMPLETE
 
-User submits HW links(2 hrs)
+User submits HW links COMPLETE
 
-User can add as many links as they want (Javascript)
+User can add as many links as they want (Javascript) NOT DONE
 
-User comments on HW
+User comments on HW COMPLETE
 
-User comments on assignment
+User comments on assignment COMPLETE
 
-User cannot make an assignment
+User cannot make an assignment COMPLETE
 
-User cannot see HW links other than their own
+User cannot see HW links other than their own NOT DONE
 
 Features / Changes:
-	- Make text area for assignment description
-	- 
+	- Make text ar
+
+Issues:
+	- Refresh after sign-in?
