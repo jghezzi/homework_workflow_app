@@ -8,6 +8,13 @@ gem 'haml'
 gem 'devise'
 gem 'cancan'
 gem 'workflow'
+
+group :test do
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'factory_girl_rails'
+end
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

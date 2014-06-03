@@ -22,4 +22,5 @@ class Submission < ActiveRecord::Base
 	has_many :submission_links
 	accepts_nested_attributes_for :submission_links
 
+
 end

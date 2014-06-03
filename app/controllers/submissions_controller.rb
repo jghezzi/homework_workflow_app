@@ -35,6 +35,7 @@ class SubmissionsController < ApplicationController
 
 	def new
 		@new_submission = Submission.new
+		# @incomplete_assignments = Assignment.incomplete_assignments
 		2.times { @new_submission.submission_links.build }
 
 	end
